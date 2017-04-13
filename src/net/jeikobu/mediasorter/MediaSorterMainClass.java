@@ -2,20 +2,34 @@ package net.jeikobu.mediasorter;
 
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.StaxDriver;
-import net.jeikobu.mediasorter.filters.PrefixFileFilter;
+import net.jeikobu.mediasorter.filters.*;
+
+import javax.naming.Name;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
 
 /**
- * Created by j.strzyzewski.ext on 2017-04-13.
+ * MediaSorter - Created by shindouj on 2017-04-13
  */
+
 public class MediaSorterMainClass {
     public static void main(String[] args) {
-        Category cat = new Category(new PrefixFileFilter("test"));
         XStream xstream = new XStream(new StaxDriver());
-
-        xstream.alias("PrefixFileFilter", PrefixFileFilter.class);
-        xstream.alias("Category", Category.class);
-
-        System.out.println(xstream.toXML(cat));
+        xstream.processAnnotations(AllTrueFilterGroup.class);
+        xstream.processAnnotations(ExtensionFileFilter.class);
+        xstream.processAnnotations(NameContainsFileFilter.class);
+        xstream.processAnnotations(OneOrMoreFilterGroup.class);
+        xstream.processAnnotations(PrefixFileFilter.class);
+        xstream.processAnnotations(Category.class);
+        OneOrMoreFilterGroup filterGroup = new OneOrMoreFilterGroup(new PrefixFileFilter("test"));
+        Category cat = new Category(filterGroup);
+        try {
+            OutputStream os = new FileOutputStream("dupa.xml");
+            xstream.toXML(cat, os);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
 }

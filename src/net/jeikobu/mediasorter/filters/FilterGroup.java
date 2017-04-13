@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileFilter;
 
 /**
- * Created by j.strzyzewski.ext on 2017-04-13.
+ * MediaSorter - Created by shindouj on 2017-04-13
  */
 public interface FilterGroup extends FileFilter {
 }

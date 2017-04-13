@@ -1,5 +1,6 @@
 package net.jeikobu.mediasorter;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
 import net.jeikobu.mediasorter.exceptions.NotBelongsToAnyCategoryException;
 import net.jeikobu.mediasorter.filters.PrefixFileFilter;
 
@@ -10,11 +11,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by j.strzyzewski.ext on 2017-04-13.
+ * MediaSorter - Created by shindouj on 2017-04-13
  */
+@XStreamAlias("Category")
 public class Category {
+    @XStreamAlias("Subcategories")
     private List<Category>   subCategories = new ArrayList<>();
+    @XStreamAlias("Filters")
     private List<FileFilter> filters       = new ArrayList<>();
+    @XStreamAlias("Directory")
     private Path             directory;
 
     public boolean belongsToCategory(File f) {
@@ -35,7 +40,7 @@ public class Category {
         throw new NotBelongsToAnyCategoryException(f);
     }
 
-    public Category(PrefixFileFilter f) {
+    public Category(FileFilter f) {
         filters.add(f);
     }
 }

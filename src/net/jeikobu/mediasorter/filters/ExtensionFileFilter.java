@@ -1,14 +1,19 @@
 package net.jeikobu.mediasorter.filters;
 
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
+
 import java.io.File;
 import java.io.FileFilter;
 
 /**
- * Created by j.strzyzewski.ext on 2017-04-13.
+ * MediaSorter - Created by shindouj on 2017-04-13
  */
+@XStreamAlias("ExtensionFilter")
 public class ExtensionFileFilter implements FileFilter {
-    String extension;
+    @XStreamAsAttribute
+    private String extension;
 
     @Override
     public boolean accept(File f) {

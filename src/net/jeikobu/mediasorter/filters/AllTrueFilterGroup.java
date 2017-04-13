@@ -1,14 +1,20 @@
 package net.jeikobu.mediasorter.filters;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamImplicit;
+
 import java.io.File;
 import java.io.FileFilter;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by j.strzyzewski.ext on 2017-04-13.
+ * MediaSorter - Created by shindouj on 2017-04-13
  */
+@XStreamAlias("AllTrueFilterGroup")
 public class AllTrueFilterGroup implements FilterGroup {
-    List<FileFilter> filters;
+    @XStreamImplicit()
+    private List<FileFilter> filters = new ArrayList<>();
 
     @Override
     public boolean accept(File f) {
