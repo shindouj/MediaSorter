@@ -5,6 +5,7 @@ import net.jeikobu.mediasorter.filters.PrefixFileFilter;
 
 import java.io.File;
 import java.io.FileFilter;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +15,7 @@ import java.util.List;
 public class Category {
     private List<Category>   subCategories = new ArrayList<>();
     private List<FileFilter> filters       = new ArrayList<>();
+    private Path             directory;
 
     public boolean belongsToCategory(File f) {
         for (FileFilter filter: filters) {
