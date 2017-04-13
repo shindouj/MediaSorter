@@ -7,6 +7,11 @@ import java.io.FileFilter;
  * Created by j.strzyzewski.ext on 2017-04-13.
  */
 public class PrefixFileFilter implements FileFilter {
+
+    public PrefixFileFilter(String prefix) {
+        this.prefix = prefix;
+    }
+
     String prefix;
 
     @Override

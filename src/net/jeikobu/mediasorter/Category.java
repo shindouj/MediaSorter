@@ -1,17 +1,19 @@
 package net.jeikobu.mediasorter;
 
 import net.jeikobu.mediasorter.exceptions.NotBelongsToAnyCategoryException;
+import net.jeikobu.mediasorter.filters.PrefixFileFilter;
 
 import java.io.File;
 import java.io.FileFilter;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by j.strzyzewski.ext on 2017-04-13.
  */
 public class Category {
-    List<Category>   subCategories;
-    List<FileFilter> filters;
+    private List<Category>   subCategories = new ArrayList<>();
+    private List<FileFilter> filters       = new ArrayList<>();
 
     public boolean belongsToCategory(File f) {
         for (FileFilter filter: filters) {
@@ -29,5 +31,9 @@ public class Category {
             return c;
         }
         throw new NotBelongsToAnyCategoryException(f);
+    }
+
+    public Category(PrefixFileFilter f) {
+        filters.add(f);
     }
 }
