@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MediaSorter.iml" filepath="$PROJECT_DIR$/.idea/modules/MediaSorter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MediaSorter_main.iml" filepath="$PROJECT_DIR$/.idea/modules/MediaSorter_main.iml" group="MediaSorter" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MediaSorter_test.iml" filepath="$PROJECT_DIR$/.idea/modules/MediaSorter_test.iml" group="MediaSorter" />
+    </modules>
+  </component>
+</project>
