@@ -23,4 +23,11 @@ public class PrefixFileFilter implements FileFilter {
     public boolean accept(File f) {
         return f.getName().startsWith(prefix);
     }
+
+    @Override
+    public String toString() {
+        return "PrefixFileFilter{" +
+                "prefix='" + prefix + '\'' +
+                '}';
+    }
 }

@@ -27,4 +27,11 @@ public class OneOrMoreFilterGroup implements FilterGroup {
         }
         return false;
     }
+
+    @Override
+    public String toString() {
+        return "OneOrMoreFilterGroup{" +
+                "filters=" + filters +
+                '}';
+    }
 }
