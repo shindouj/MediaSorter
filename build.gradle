@@ -11,4 +11,10 @@ repositories {
 
 dependencies {
     compile "com.thoughtworks.xstream:xstream:1.4.9"
+    compile group: 'org.cfg4j', name: 'cfg4j-core', version: '4.4.0'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.8.2'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.8.2'
+    compile group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.8.2'
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+
 }
