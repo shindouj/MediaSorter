@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<Categories>
+    <Category label="Foo">
+        <Subcategories>
+            <Category label="Bar">
+                <Directory>C:/foo/bar</Directory>
+                <Filters>
+                    <PrefixFilter prefix="foobar"/>
+                </Filters>
+            </Category>
+        </Subcategories>
+        <Directory>C:/foo</Directory>
+        <Filters>
+            <OneOrMoreTrueFilterGroup>
+                <PrefixFilter prefix="foo"/>
+            </OneOrMoreTrueFilterGroup>
+        </Filters>
+    </Category>
+    <Category label="Pea">
+        <Subcategories>
+            <Category label="Cock">
+                <Directory>C:/pea/cock</Directory>
+                <Filters>
+                    <PrefixFilter prefix="peacock"/>
+                </Filters>
+            </Category>
+        </Subcategories>
+        <Directory>C:/pea</Directory>
+        <Filters>
+            <OneOrMoreTrueFilterGroup>
+                <PrefixFilter prefix="pea"/>
+            </OneOrMoreTrueFilterGroup>
+        </Filters>
+    </Category>
+</Categories>
+
