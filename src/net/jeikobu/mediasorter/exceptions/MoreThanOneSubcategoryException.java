@@ -3,7 +3,8 @@ package net.jeikobu.mediasorter.exceptions;
 import java.io.File;
 
 /**
- * Created by j.strzyzewski.ext on 2017-04-13.
+ * MediaSorter - created by shindouj on 2017-04-13.
+ * Licensed under GPLv3.
  */
 public class MoreThanOneSubcategoryException extends Exception {
     File f;

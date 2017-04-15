@@ -5,7 +5,8 @@ import net.jeikobu.mediasorter.Category;
 import java.io.File;
 
 /**
- * Created by j.strzyzewski.ext on 2017-04-14.
+ * MediaSorter - created by shindouj on 2017-04-14.
+ * Licensed under GPLv3.
  */
 public class DoesNotBelongToThisCategory extends Exception {
     public DoesNotBelongToThisCategory(Category c, File f) {

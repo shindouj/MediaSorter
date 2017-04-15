@@ -2,6 +2,7 @@ package net.jeikobu.mediasorter.filters;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
+import org.apache.commons.lang3.StringUtils;
 
 import java.io.File;
 import java.io.FileFilter;
@@ -10,10 +11,10 @@ import java.io.FileFilter;
  * MediaSorter - created by shindouj on 2017-04-13.
  * Licensed under GPLv3.
  */
-@XStreamAlias("PrefixFilter")
-public class PrefixFileFilter implements FileFilter {
+@XStreamAlias("CaseInsensitivePrefixFilter")
+public class CaseInsensitivePrefixFileFilter implements FileFilter {
 
-    public PrefixFileFilter(String prefix) {
+    public CaseInsensitivePrefixFileFilter(String prefix) {
         this.prefix = prefix;
     }
 
@@ -22,12 +23,12 @@ public class PrefixFileFilter implements FileFilter {
 
     @Override
     public boolean accept(File f) {
-        return f.getName().startsWith(prefix);
+        return StringUtils.startsWithIgnoreCase(f.getName(), prefix);
     }
 
     @Override
     public String toString() {
-        return "PrefixFileFilter{" +
+        return "CaseInsensitivePrefixFileFilter{" +
                 "prefix='" + prefix + '\'' +
                 '}';
     }

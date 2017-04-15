@@ -7,7 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by j.strzyzewski.ext on 2017-04-14.
+ * MediaSorter - created by shindouj on 2017-04-14.
+ * Licensed under GPLv3.
  */
 @XStreamAlias("Categories")
 public class Categories {

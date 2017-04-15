@@ -6,7 +6,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 /**
- * Created by j.strzyzewski.ext on 2017-04-14.
+ * MediaSorter - created by shindouj on 2017-04-14.
+ * Licensed under GPLv3.
  */
 public class PathConverter extends AbstractSingleValueConverter {
     @Override
