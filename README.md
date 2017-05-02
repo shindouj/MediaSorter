@@ -13,4 +13,4 @@ MediaSorter uses three simple module types for operation:
 Absolutely. First things first, this tool needs decent Java parsers instead of using ready-made parsers in other languages. I'm not very good with RegExps and parsing is not my favourite thing to do (also yes, I tried to port them, and I failed :<), so I worked around it by embedding parsers made by other people in other languages, which are very good, but you know - it's not the smartest and cleanest thing to do.
 
 ## Contributions
-This project is using [parse-torrent-name](https://github.com/divijbindlish/parse-torrent-name) by [Divij Bindlish](http://divijbindlish.in), licensed under MIT license. All rights reserved.
+This project is using [parse-torrent-name](https://github.com/divijbindlish/parse-torrent-name) by [Divij Bindlish](http://divijbindlish.in), licensed under MIT license. 
