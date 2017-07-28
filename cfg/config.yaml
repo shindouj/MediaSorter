@@ -1,7 +1,7 @@
 MSConfig:
   copyRetries: 3
   retryEnabled: true
-  filterPath: cfg\filter.xml
+  filterPath: cfg//filter.xml
   listenPath: C:\test
   listenInterval: 20
-  log4jConfigPath: cfg\log4j2.xml
+  log4jConfigPath: cfg//log4j2.xml

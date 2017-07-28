@@ -1,6 +1,8 @@
 package net.jeikobu.mediasorter;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -27,6 +29,14 @@ public class FileCopyTask {
 
     public Path getCopyToPath() {
         return copyTo;
+    }
+
+    public void performCopy() throws IOException {
+        Files.copy(getCopyFromPath(), getCopyToPath());
+    }
+
+    public void performMove() throws IOException {
+        Files.move(getCopyFromPath(), getCopyToPath());
     }
 
     public Category getCopyCategory() {

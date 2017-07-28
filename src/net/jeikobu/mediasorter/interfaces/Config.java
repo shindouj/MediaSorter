@@ -1,4 +1,4 @@
-package net.jeikobu.mediasorter;
+package net.jeikobu.mediasorter.interfaces;
 
 import java.io.File;
 

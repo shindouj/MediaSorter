@@ -1,6 +1,7 @@
 <?xml version="1.0" ?>
 <Categories>
     <Category label="Foo">
+        <Parser>MovieParser</Parser>
         <Subcategories>
             <Category label="Bar">
                 <Directory>C:/foo/bar</Directory>
@@ -17,14 +18,7 @@
         </Filters>
     </Category>
     <Category label="Pea">
-        <Subcategories>
-            <Category label="Cock">
-                <Directory>C:/pea/cock</Directory>
-                <Filters>
-                    <PrefixFilter prefix="peacock"/>
-                </Filters>
-            </Category>
-        </Subcategories>
+        <Subcategories></Subcategories>
         <Directory>C:/pea</Directory>
         <Filters>
             <OneOrMoreTrueFilterGroup>
