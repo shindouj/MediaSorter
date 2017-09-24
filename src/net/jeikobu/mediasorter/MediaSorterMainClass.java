@@ -33,7 +33,7 @@ import java.util.concurrent.TimeUnit;
 public class MediaSorterMainClass {
 
     private static List<FileCopyTask> retryQueue = new ArrayList<>();
-    private static Config config;
+    private static Config             config;
     private static Logger             logger;
     private static XStream            xstream;
     private static boolean            scanLock;
@@ -93,7 +93,7 @@ public class MediaSorterMainClass {
 
                     try {
                         categories = (Categories) xstream.fromXML(new FileInputStream(config.filterPath().getAbsolutePath()));
-                    } catch (FileNotFoundException e) {
+                    } catch (Exception e) {
                         logger.error(e);
                     }
 
@@ -103,44 +103,56 @@ public class MediaSorterMainClass {
                     File directory = config.listenPath();
 
                     List<CategorizedFile> categorizedFiles = new ArrayList<>();
-                    for (File f: directory.listFiles()) {
-                        try {
-                            Category cat = getFileCategory(categories, f);
-                            categorizedFiles.add(new CategorizedFile(f, cat));
-                        } catch (MoreThanOneCategoryException e) {
-                            logger.error(e);
-                            continue;
-                        } catch (MoreThanOneSubcategoryException e) {
-                            logger.error(e);
-                            continue;
+
+                    if (directory.listFiles() != null) {
+                        for (File f: directory.listFiles()) {
+                            try {
+                                Category cat = getFileCategory(categories, f);
+                                if (cat == null) continue;
+                                categorizedFiles.add(new CategorizedFile(f, cat));
+                            } catch (MoreThanOneCategoryException e) {
+                                logger.error(e);
+                                continue;
+                            } catch (MoreThanOneSubcategoryException e) {
+                                logger.error(e);
+                                continue;
+                            }
                         }
                     }
 
+                    logger.debug(categorizedFiles.toString());
+
                     // Sorting files
-                    for (CategorizedFile cf: categorizedFiles) {
-                        FileCopyTask currentTask = new FileCopyTask(cf.getCategory(), cf.getFile());
-                        logger.debug("File " + currentTask.getCopyFromPath()
-                                + " belongs to " + currentTask.getCopyCategory().getLabel() + ".");
-                        try {
-                            currentTask.performMove();
-                            logger.debug("Moved " + currentTask.getCopyFromPath()
-                                    + " to " + currentTask.getCopyToPath() + " successfully.");
-                        } catch (IOException e) {
-                            logger.error(e);
-                            if (currentTask.getCopyTrials() == 0 && config.retryEnabled()) {
-                                retryQueue.add(currentTask.incrementCopyTrials());
-                                logger.error("File has been added to retry queue.");
+
+                    try {
+                        for (CategorizedFile cf: categorizedFiles) {
+                            FileCopyTask currentTask = new FileCopyTask(cf.getCategory(), cf.getFile());
+                            logger.debug("File " + currentTask.getCopyFromPath()
+                                    + " belongs to " + currentTask.getCopyCategory().getLabel() + ".");
+                            try {
+                                currentTask.performMove();
+                                logger.debug("Moved " + currentTask.getCopyFromPath()
+                                        + " to " + currentTask.getCopyToPath() + " successfully.");
+                            } catch (IOException e) {
+                                logger.error(e);
+                                if (currentTask.getCopyTrials() == 0 && config.retryEnabled()) {
+                                    retryQueue.add(currentTask.incrementCopyTrials());
+                                    logger.error("File has been added to retry queue.");
+                                }
                             }
                         }
+                    } catch (Exception e) {
+                        logger.error(e);
+                        e.printStackTrace();
                     }
 
                     // Parsing files
                     List<ParsedFile> parsedFiles = new ArrayList<>();
                     for (CategorizedFile cf: categorizedFiles) {
                         try {
-                            cf.getCategory().getParser().fromCategorizedFile(cf).getMetadata().toString();
+                            logger.debug(cf.getCategory().getParser().fromCategorizedFile(cf).getMetadata().toString());
                         } catch (UnknownParserException e) {
-                            e.printStackTrace();
+                            logger.error(e);
                         }
                     }
 

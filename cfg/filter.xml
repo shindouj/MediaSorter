@@ -17,12 +17,16 @@
             </OneOrMoreTrueFilterGroup>
         </Filters>
     </Category>
-    <Category label="Pea">
+    <Category label="Movies">
+        <Parser name="MovieParser"/>
         <Subcategories></Subcategories>
-        <Directory>C:/pea</Directory>
+        <Directory>/Users/Woozie/Movies</Directory>
         <Filters>
             <OneOrMoreTrueFilterGroup>
-                <PrefixFilter prefix="pea"/>
+                <ExtensionFilter extension=".mkv"/>
+                <ExtensionFilter extension=".avi"/>
+                <ExtensionFilter extension=".mp4"/>
+                <ExtensionFilter extension=".mov"/>
             </OneOrMoreTrueFilterGroup>
         </Filters>
     </Category>

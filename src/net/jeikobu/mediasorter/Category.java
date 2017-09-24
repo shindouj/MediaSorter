@@ -91,10 +91,13 @@ public class Category {
     @Override
     public String toString() {
         return "Category{" +
-                "subCategories=" + subCategories +
+                "directory=" + directory +
+                ", directoryFilters=" + directoryFilters +
                 ", filters=" + filters +
-                ", directory=" + directory +
                 ", label='" + label + '\'' +
+                ", parserName='" + parserName + '\'' +
+                ", renameToScheme='" + renameToScheme + '\'' +
+                ", subCategories=" + subCategories +
                 '}';
     }
 }

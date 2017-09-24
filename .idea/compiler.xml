@@ -4,6 +4,8 @@
     <bytecodeTargetLevel>
       <module name="MediaSorter_main" target="1.8" />
       <module name="MediaSorter_test" target="1.8" />
+      <module name="ParseTorrentName_main" target="1.8" />
+      <module name="ParseTorrentName_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

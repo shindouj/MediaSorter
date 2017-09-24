@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.omertron:API-OMDB:1.4">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.omertron/API-OMDB/1.4/f27eececaae747a5bf896a782c0323dba1d773a3/API-OMDB-1.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.omertron/API-OMDB/1.4/f513af5da6ee9b471655f425602c6674f65271fc/API-OMDB-1.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

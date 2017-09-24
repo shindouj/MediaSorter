@@ -23,4 +23,12 @@ public class CategorizedFile {
     public Category getCategory() {
         return c;
     }
+
+    @Override
+    public String toString() {
+        return "CategorizedFile{" +
+                "f=" + f +
+                ", c=" + c +
+                '}';
+    }
 }

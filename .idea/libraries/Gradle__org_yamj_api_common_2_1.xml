@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.yamj:api-common:2.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.yamj/api-common/2.1/c7c8855e1149b50ac456a278b8c43a2b7b7cf1fe/api-common-2.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.yamj/api-common/2.1/5aa069267de3bc1aa44a6de0c5e7c3a8cc107385/api-common-2.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

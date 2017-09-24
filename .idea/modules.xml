@@ -5,6 +5,10 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/MediaSorter.iml" filepath="$PROJECT_DIR$/.idea/modules/MediaSorter.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/MediaSorter_main.iml" filepath="$PROJECT_DIR$/.idea/modules/MediaSorter_main.iml" group="MediaSorter" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/MediaSorter_test.iml" filepath="$PROJECT_DIR$/.idea/modules/MediaSorter_test.iml" group="MediaSorter" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ParseTorrentName/ParseTorrentName.iml" filepath="$PROJECT_DIR$/.idea/modules/ParseTorrentName/ParseTorrentName.iml" group="ParseTorrentName" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ParseTorrentName.iml" filepath="$PROJECT_DIR$/.idea/modules/ParseTorrentName.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ParseTorrentName_main.iml" filepath="$PROJECT_DIR$/.idea/modules/ParseTorrentName_main.iml" group="ParseTorrentName" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ParseTorrentName_test.iml" filepath="$PROJECT_DIR$/.idea/modules/ParseTorrentName_test.iml" group="ParseTorrentName" />
     </modules>
   </component>
 </project>
